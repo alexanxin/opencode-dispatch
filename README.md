@@ -1,10 +1,26 @@
-# opencode-dispatch
+<p align="center">
+  <h1> opencode-dispatch</h1>
+</p>
 
-**Control opencode from Telegram — like Claude users do with Dispatch.**
+<p align="center">
+  <strong>Control opencode from Telegram — like Claude's Dispatch, but for opencode.</strong>
+</p>
 
-> I deeply appreciate what the opencode team is building. This project is my small contribution to their already awesome work — making opencode accessible from anywhere, just like Claude's Dispatch.
+<p align="center">
+  <a href="https://github.com/alexanxin/opencode-dispatch"><img src="https://img.shields.io/github/stars/alexanxin/opencode-dispatch?style=for-the-badge" alt="GitHub Stars"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
+  <a href="https://opencode.ai"><img src="https://img.shields.io/badge/opencode-CLI-orange?style=for-the-badge" alt="opencode"></a>
+</p>
 
-opencode-dispatch bridges your Telegram bot to the opencode CLI. Send messages from your phone, and opencode processes them just like it would in a terminal. Perfect for when you're away from your desk but still want AI assistance.
+<p align="center">
+  <a href="#quick-setup">Setup</a> · <a href="#how-it-works">How It Works</a> · <a href="#use-cases">Use Cases</a> · <a href="#security">Security</a> · <a href="#troubleshooting">Troubleshooting</a>
+</p>
+
+---
+
+> I deeply appreciate what the opencode team is building. This is my small contribution to their already awesome work — making opencode accessible from anywhere via Telegram.
+
+Bridge your Telegram bot to the [opencode CLI](https://opencode.ai). Send messages from your phone, opencode processes them just like it would in a terminal. Perfect for when you're away from your desk but still want AI assistance.
 
 ## What You Need
 
@@ -102,10 +118,9 @@ Your Phone → Telegram → bot.py → opencode API (port 5050) → response →
 
 ```
 You: "What does the auth middleware in @middleware.ts do?"
-opencode: "The auth middleware in middleware.ts checks for a valid JWT token
-           in the Authorization header. It extracts the user ID from the token
-           and attaches it to the request object. If the token is missing or
-           expired, it returns a 401 response."
+opencode: "The auth middleware checks for a valid JWT token
+           in the Authorization header. It extracts the user ID
+           and attaches it to the request object."
 ```
 
 ### 2. Start a Task
@@ -175,16 +190,6 @@ OPENCODE_SERVER_PASSWORD=your-secret
 ### Network safety
 
 The server only listens on `127.0.0.1` (localhost) by default. It's not accessible from other machines on your network. Never use `--hostname 0.0.0.0` unless you know what you're doing.
-
-## What's Included
-
-| File | Purpose |
-|------|---------|
-| `bot.py` | Python bot — receives Telegram messages and forwards to opencode |
-| `bot.js` | Node.js bot — same as bot.py but for Node users |
-| `requirements.txt` | Python dependencies |
-| `package.json` | Node.js dependencies |
-| `.env.example` | Template for your configuration |
 
 ## Troubleshooting
 
