@@ -191,6 +191,18 @@ OPENCODE_SERVER_PASSWORD=your-secret
 
 The server only listens on `127.0.0.1` (localhost) by default. It's not accessible from other machines on your network. Never use `--hostname 0.0.0.0` unless you know what you're doing.
 
+### Restrict to your Telegram account (recommended)
+
+By default the bot responds to anyone who finds it. To lock it to your account:
+
+1. Get your chat ID: message [@userinfobot](https://t.me/userinfobot) on Telegram
+2. Add to `.env`:
+```env
+TELEGRAM_ALLOWED_CHAT_ID=your_chat_id_here
+```
+
+Others will receive: "This bot is not authorized to respond to you."
+
 ## Troubleshooting
 
 **"Can't connect to opencode"**
